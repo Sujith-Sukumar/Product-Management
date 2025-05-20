@@ -213,21 +213,21 @@ const deleteProduct = async (id) => {
                                     <div className="edit-form">
                                         <div className="option">
                                             <label>Image:</label>
-                                            <input
-                                                type="file"
-                                                accept="image/*"
-                                                onChange={(e) => {
-                                                    const file = e.target.files[0];
-                                                    if (file) {
-                                                        const reader = new FileReader();
-                                                        reader.onloadend = () => {
-                                                            handleEditChange('image', reader.result);
-                                                        };
-                                                        reader.readAsDataURL(file);
-                                                    }
+{/*                                             <input */}
+{/*                                                 type="file" */}
+                                                // accept="image/*"
+                                                // onChange={(e) => {
+                                                    // const file = e.target.files[0];
+                                                    // if (file) {
+                                                        // const reader = new FileReader();
+                                                        // reader.onloadend = () => {
+                                                            // handleEditChange('image', reader.result);
+                                                        // };
+                                                        // reader.readAsDataURL(file);
+                                                    // }
 
-                                                }}
-                                            />
+                                                // }}
+                                            // />
                                         </div>
 
                                         <div className="option">
