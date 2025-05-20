@@ -1,0 +1,146 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #00446e;
+  padding: 15px 10%;
+  color: white;
+  font-family: sans-serif;
+}
+
+.search-container {
+  display: flex;
+  overflow: hidden;
+}
+
+.search-container input {
+  padding: 10px;
+  border: none;
+  outline: none;
+  width: 250px;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  background-color: #eda315;
+  border: none;
+  margin-left: -10px;
+  cursor: pointer;
+  border-radius: 10px 10px ;
+  color: white;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  margin-right: -25px;
+}
+
+.icon-wrapper {
+  position: relative;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  top:5px;
+  right: -8px;
+  background: #eda315;
+  color: white;
+  border-radius: 100%;
+  padding: 2px 4px;
+  font-size:6px;
+}
+
+.signin,
+.cart-text {
+  margin-left: 12px;
+  font-size: 13px;
+}
+@media (max-width:576px){
+  .header {
+  padding: 10px 1%;
+  width: 117%;
+}
+.search-container input {
+  width: 130px;
+}
+}
+.wishlist-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  background: rgb(255, 255, 255);
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.wishlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  width: 117%;
+  margin-top: -20px;
+  margin-left: -20px;
+  background-color: #00446e;
+  padding-bottom: 22px;
+}
+.slide-icon{
+  background-color: white;
+  color: black;
+  border-radius: 100%;
+  padding: 0px 4px;
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.undo-btn{
+  margin-right: 25px;
+  cursor: pointer;
+  background-color: transparent !important;
+}
+.wishlist-item {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.wishlist-item img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+.wishlist-name {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.stars {
+  font-size: 12px;
+  color: #ffc107;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  margin-left: auto;
+  color: #888;
+  cursor: pointer;
+}
+
