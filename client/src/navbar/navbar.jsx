@@ -17,7 +17,7 @@ function Navbar() {
   useEffect(() => {
     if (showcartlist) {
       const token = localStorage.getItem('token');
-      fetch('http://localhost:5000/api/search/buy', {
+      fetch('https://product-management-bk7y.onrender.com/api/search/buy', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -32,7 +32,7 @@ function Navbar() {
     if (showWishlist) {
       const token = localStorage.getItem('token');
 
-      fetch('http://localhost:5000/api/wishlisted', {
+      fetch('https://product-management-bk7y.onrender.com/api/wishlisted', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -46,7 +46,7 @@ function Navbar() {
   const handleSearch = () => {
     if (!searchTerm.trim()) return;
 
-    fetch(`http://localhost:5000/api/products/search?name=${encodeURIComponent(searchTerm)}`)
+    fetch(`https://product-management-bk7y.onrender.com/api/products/search?name=${encodeURIComponent(searchTerm)}`)
       .then((res) => {
         if (!res.ok) throw new Error('Search failed');
         return res.json();
@@ -113,7 +113,7 @@ function Navbar() {
                   <div className="stars">⭐️⭐️⭐️⭐️☆</div>
                 </div>
                 <button className="remove-btn" onClick={() => {
-                  fetch(`http://localhost:5000/api/wishlist/delete/${item.name}`, {
+                  fetch(`https://product-management-bk7y.onrender.com/api/wishlist/delete/${item.name}`, {
                     method: 'DELETE',
                   })
                     .then((res) => res.json())
@@ -153,7 +153,7 @@ function Navbar() {
                   <p>Price$ : {item.price}</p>
                 </div>
                 <button className="remove-btn" onClick={() => {
-                  fetch(`http://localhost:5000/api/buy/delete/${item.name}`, {
+                  fetch(`https://product-management-bk7y.onrender.com/api/buy/delete/${item.name}`, {
                     method: 'DELETE',
                   })
                     .then((res) => res.json())
