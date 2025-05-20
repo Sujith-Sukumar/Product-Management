@@ -26,7 +26,7 @@ function AuthForm() {
             const data = await res.json()
             if (data.token) {
                 localStorage.setItem('token', data.token);
-                // alert('Logged in successfully!')
+                alert('Logged in successfully!')
                 navigate('/home')
             } else {
                 alert(data.message);
@@ -51,6 +51,7 @@ function AuthForm() {
 
             if (data.token) {
                 localStorage.setItem('token', data.token);
+                alert('Signup success!')
                 navigate('/home')
             } else {
                 alert(data.message || 'Signup failed');
