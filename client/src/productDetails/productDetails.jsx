@@ -116,7 +116,6 @@ function ProductDetails() {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                image: editedProduct.image,
                 price: Number(editedProduct.price),
                 count: Number(editedProduct.count),
             }),
@@ -132,25 +131,26 @@ function ProductDetails() {
                 alert('Failed to update product');
             });
     };
-const deleteProduct = async (id) => {
-  try {
-    const res = await fetch(`https://product-management-bk7y.onrender.com/api/products/${id}`, {
-      method: 'DELETE'
-    });
 
-    if (res.ok) {
-      alert('Product deleted successfully');
-      navigate('/home')
-      // Optionally, refetch product list or remove the deleted product from state
-    } else {
-      const errorData = await res.json();
-      alert(`Error: ${errorData.message}`);
-    }
-  } catch (error) {
-    console.error('Failed to delete product:', error);
-    alert('Failed to delete product');
-  }
-};
+    const deleteProduct = async (id) => {
+        try {
+            const res = await fetch(`https://product-management-bk7y.onrender.com/api/products/${id}`, {
+                method: 'DELETE'
+            });
+
+            if (res.ok) {
+                alert('Product deleted successfully');
+                navigate('/home')
+                // Optionally, refetch product list or remove the deleted product from state
+            } else {
+                const errorData = await res.json();
+                alert(`Error: ${errorData.message}`);
+            }
+        } catch (error) {
+            console.error('Failed to delete product:', error);
+            alert('Failed to delete product');
+        }
+    };
 
     return (
 
@@ -212,25 +212,6 @@ const deleteProduct = async (id) => {
                                 <>
                                     <div className="edit-form">
                                         <div className="option">
-                                            <label>Image:</label>
-                                           <input 
-                                              type="file" 
-                                                 accept="image/*"
-                                                 onChange={(e) => {
-                                                    const file = e.target.files[0];
-                                                    if (file) {
-                                                        const reader = new FileReader();
-                                                        reader.onloadend = () => {
-                                                            handleEditChange('image', reader.result);
-                                                        };
-                                                        reader.readAsDataURL(file);
-                                                    }
-
-                                                }}
-                                            />
-                                        </div>
-
-                                        <div className="option">
                                             <label>Price:</label>
                                             <input
                                                 type="number"
@@ -249,6 +230,7 @@ const deleteProduct = async (id) => {
                                                 onChange={(e) => handleEditChange('count', e.target.value)}
                                             />
                                         </div>
+
                                         <div className="edit-buttons">
                                             <button onClick={handleSaveEdit}>Save</button>
                                             <button onClick={() => setIsEditing(false)}>Cancel</button>

@@ -239,32 +239,11 @@ app.delete('/buy/delete/:name', async (req, res) => {
 
 app.put('/product/edit:id', async (req, res) => {
     try {
-        const { image, price, count, quantity } = req.body;
-        let imageData = {};
+        const { price, count, quantity } = req.body;
 
-        if (image && image.startsWith('data:image/')) {
-            const matches = image.match(/^data:(image\/.+);base64,(.+)$/);
-            if (!matches) {
-                return res.status(400).json({ message: 'Invalid image data' });
-            }
-
-            const contentType = matches[1];
-            const base64Data = matches[2];
-            const bufferData = Buffer.from(base64Data, 'base64');
-
-            imageData = {
-                data: bufferData,
-                contentType: contentType,
-            };
-        }
         const updated = await Product.findByIdAndUpdate(
             req.params.id,
-            {
-                ...(imageData.data ? { image: imageData } : {}),
-                price,
-                count,
-                quantity
-            },
+            { price, count, quantity },
             { new: true }
         );
 
@@ -276,6 +255,7 @@ app.put('/product/edit:id', async (req, res) => {
         res.status(500).json({ message: 'Update failed', error });
     }
 });
+
 
 app.post('/categories', async (req, res) => {
   try {
