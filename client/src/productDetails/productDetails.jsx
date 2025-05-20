@@ -17,7 +17,7 @@ function ProductDetails() {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/products/${id}`)
+        fetch(`https://product-management-bk7y.onrender.com/api/products/${id}`)
             .then((res) => {
                 if (!res.ok) throw new Error('Product not found');
                 return res.json();
@@ -59,7 +59,7 @@ function ProductDetails() {
             productId: product._id
         }
         const token = localStorage.getItem('token');
-        fetch('http://localhost:5000/api/buy', {
+        fetch('https://product-management-bk7y.onrender.com/api/buy', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
             body: JSON.stringify(bydata),
@@ -77,7 +77,7 @@ function ProductDetails() {
             return;
         }
         const token = localStorage.getItem('token');
-        fetch('http://localhost:5000/api/wishlist', {
+        fetch('https://product-management-bk7y.onrender.com/api/wishlist', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
             body: JSON.stringify({
@@ -112,7 +112,7 @@ function ProductDetails() {
     };
 
     const handleSaveEdit = () => {
-        fetch(`http://localhost:5000/api/product/edit${id}`, {
+        fetch(`https://product-management-bk7y.onrender.com/api/product/edit${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -134,7 +134,7 @@ function ProductDetails() {
     };
 const deleteProduct = async (id) => {
   try {
-    const res = await fetch(`http://localhost:5000/api/products/${id}`, {
+    const res = await fetch(`https://product-management-bk7y.onrender.com/api/products/${id}`, {
       method: 'DELETE'
     });
 
