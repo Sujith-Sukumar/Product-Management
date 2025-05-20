@@ -63,7 +63,16 @@
 @media (max-width:576px){
   .header {
   padding: 10px 1%;
-  width: 117%;
+  width: 130%;
+}
+.search-container input {
+  width: 130px;
+}
+}
+@media (max-width:320px){
+  .header {
+  padding: 10px 1%;
+  width: 141%;
 }
 .search-container input {
   width: 130px;
