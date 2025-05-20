@@ -29,7 +29,7 @@ export default function Home() {
     const [newSubCategoryName, setNewSubCategoryName] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/products')
+        fetch('https://product-management-bk7y.onrender.com/api/products')
             .then((res) => {
                 if (!res.ok) throw new Error('Failed to fetch products');
                 return res.json();
@@ -45,12 +45,12 @@ export default function Home() {
     }, []);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/categories')
+        fetch('https://product-management-bk7y.onrender.com/api/categories')
             .then(res => res.json())
             .then(data => {
                 setCategoriesData(data);
                 data.forEach(cat => {
-                    fetch(`http://localhost:5000/api/subcategories/${cat._id}`)
+                    fetch(`https://product-management-bk7y.onrender.com/api/subcategories/${cat._id}`)
                         .then(res => res.json())
                         .then(subs => {
                             setSubCategoriesMap(prev => ({ ...prev, [cat._id]: subs }));
@@ -60,7 +60,7 @@ export default function Home() {
     }, []);
 
     const handleAddCategory = async () => {
-        const res = await fetch('http://localhost:5000/api/categories', {
+        const res = await fetch('https://product-management-bk7y.onrender.com/api/categories', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name: newCategoryName }),
@@ -72,7 +72,7 @@ export default function Home() {
     };
 
     const handleAddSubCategory = async () => {
-        const res = await fetch('http://localhost:5000/api/subcategories', {
+        const res = await fetch('https://product-management-bk7y.onrender.com/api/subcategories', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name: newSubCategoryName, categoryId: selectedCategory }),
@@ -101,7 +101,7 @@ export default function Home() {
         formData.append('subcategory', selectedSubCategory);
         formData.append('image', productData.image);
 
-        const res = await fetch('http://localhost:5000/api/products', {
+        const res = await fetch('https://product-management-bk7y.onrender.com/api/products', {
             method: 'POST',
             body: formData
         });
@@ -140,7 +140,7 @@ export default function Home() {
             return;
         }
 
-        fetch('http://localhost:5000/api/wishlist', {
+        fetch('https://product-management-bk7y.onrender.com/api/wishlist', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
