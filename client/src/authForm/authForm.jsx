@@ -18,7 +18,7 @@ function AuthForm() {
         }
 
         const login = async () => {
-            const res = await fetch('http://localhost:5000/api/login', {
+            const res = await fetch('https://product-management-bk7y.onrender.com/api/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(userInfo)
@@ -42,7 +42,7 @@ function AuthForm() {
         }
 
         const signup = async () => {
-            const res = await fetch('http://localhost:5000/api/signup', {
+            const res = await fetch('https://product-management-bk7y.onrender.com/api/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(userInfo)
