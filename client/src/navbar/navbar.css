@@ -35,7 +35,7 @@
 .actions {
   display: flex;
   align-items: center;
-  margin-right: -25px;
+  /* margin-right: -25px; */
 }
 
 .icon-wrapper {
@@ -59,24 +59,6 @@
 .cart-text {
   margin-left: 12px;
   font-size: 13px;
-}
-@media (max-width:576px){
-  .header {
-  padding: 10px 1%;
-  width: 130%;
-}
-.search-container input {
-  width: 130px;
-}
-}
-@media (max-width:320px){
-  .header {
-  padding: 10px 1%;
-  width: 141%;
-}
-.search-container input {
-  width: 130px;
-}
 }
 .wishlist-drawer {
   position: fixed;
@@ -152,4 +134,24 @@
   color: #888;
   cursor: pointer;
 }
-
+@media (max-width:576px){
+  .header {
+  padding: 10px 1%;
+  width: 111%;
+}
+.search-container input {
+  width: 130px;
+}
+.actions{
+  margin-right: 5%;
+}
+}
+@media (max-width:320px){
+  .header {
+  padding: 10px 1%;
+  width: 141%;
+}
+.search-container input {
+  width: 130px;
+}
+}

@@ -251,11 +251,11 @@ export default function Home() {
                         </div>
                         <div className="rows-select">
                             Show
-                            <select>
+                            {/* <select>
                                 <option>10 rows</option>
                                 <option>20 rows</option>
                                 <option>50 rows</option>
-                            </select>
+                            </select> */}
                         </div>
                     </div>
                 </main>
