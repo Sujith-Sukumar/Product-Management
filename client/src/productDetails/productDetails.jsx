@@ -204,7 +204,7 @@ function ProductDetails() {
                                 <>
                                     <button className="edit-btn" onClick={() => setIsEditing(true)}>Edit product</button>
                                     <button className="buy-btn" onClick={bybutton}>Buy it now</button>
-                                    <button className="edit-btn" onClick={() => deleteProduct(product._id)}>DEL</button>
+                                    <button className="del-btn" onClick={() => deleteProduct(product._id)}>DEL</button>
                                     <button className="fav-btn" onClick={() => addToWishlist(product)}>♡</button>
 
                                 </>

@@ -116,6 +116,7 @@
 }
 
 .edit-btn,
+.del-btn,
 .buy-btn {
   padding: 10px 20px;
   border: none;
@@ -124,11 +125,21 @@
   cursor: pointer;
   font-weight: bold;
 }
-
+.del-btn{
+   padding: 19px 20px;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  background:#f0a500 ;
+}
 .edit-btn {
   background-color: #f0a500;
 }
-
+.del-btn {
+  background-color: #f0a500;
+}
 .buy-btn {
   background-color: #f0a500;
 }
@@ -166,4 +177,57 @@
 .edit-buttons button:last-child {
     background-color: #bdc3c7;
     color: black;
+}
+@media (max-width: 576px) {
+  .product-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-image {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .thumbnail-container {
+    justify-content: center;
+  }
+
+  .product-info {
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .action-buttons {
+    /* flex-direction: column; */
+    align-items: center;
+    /* gap: 10px; */
+  }
+
+  .edit-buttons {
+    display: flex;
+    /* flex-direction: column; */
+    /* gap: 10px; */
+    align-items: center;
+  }
+  .ram-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .quantity-control {
+    justify-content: center;
+  }
+.edit-btn,
+.del-btn,
+.buy-btn {
+  padding: 10px 10px;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
 }
