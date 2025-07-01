@@ -12,9 +12,6 @@ This is a full-stack MERN (MongoDB, Express, React, Node.js) application that al
    cd server
    npm install
 
-   MONGO_URI=mongodb+srv://sujithkallingalwork:jA9eYvIRyD9ztF8M@cluster0.klvzeyj.mongodb.net/product-management?retryWrites=true&w=majority&appName=Cluster0
-   PORT=5000
-
   2. Run the Backend Server
      node index.js
 
